@@ -7371,3 +7371,985 @@ Using module file /usr/local/lib/python3.8/dist-packages/ansible/modules/command
 <localhost> PUT /root/.ansible/tmp/ansible-local-4hfwxj272/tmpb4qcxija TO /root/.ansible/tmp/ansible-tmp-1666319184.9143734-2555-203201866921471/AnsiballZ_command.py
 <localhost> EXEC /bin/sh -c 'chmod u+x /root/.ansible/tmp/ansible-tmp-1666319184.9143734-2555-203201866921471/ /root/.ansible/tmp/ansible-tmp-1666319184.9143734-2555-203201866921471/AnsiballZ_command.py && sleep 0'
 <localhost> EXEC /bin/sh -c '/usr/bin/python3 /root/.ansible/tmp/ansible-tmp-1666319184.9143734-2555-203201866921471/AnsiballZ_command.py && sleep 0'
+<localhost> EXEC /bin/sh -c 'rm -f -r /root/.ansible/tmp/ansible-tmp-1666319184.9143734-2555-203201866921471/ > /dev/null 2>&1 && sleep 0'
+fatal: [localhost]: FAILED! => {
+    "changed": true,
+    "cmd": "cd \"/home/bevel/platforms/r3-corda/configuration/../../../\"\necho \"---------------GIT PUSH---------------\"\nexport GIT_SSH_COMMAND='ssh -i /home/bevel/build/gitops'\ngit config user.email git@email.com\ngit config user.name SynthNetics\ngit --git-dir=/home/bevel/platforms/r3-corda/configuration/../../..//.git pull\ngit --git-dir=/home/bevel/platforms/r3-corda/configuration/../../..//.git add -A .\n\n# To ignore a directory add it add reset path\nreset_path=platforms/r3-corda/configuration\nif [ -n \"$reset_path\" ]; then\n    git --git-dir=/home/bevel/platforms/r3-corda/configuration/../../..//.git reset \"platforms/r3-corda/configuration\"\nfi  \n\ngit --git-dir=/home/bevel/platforms/r3-corda/configuration/../../..//.git commit -s -m \"[ci skip] Pushing deployment files for namespace and service accounts\" || true\ngit --git-dir=/home/bevel/platforms/r3-corda/configuration/../../..//.git push ssh://git@github.com/SynthNetics/bevel.git HEAD:local  \n",
+    "delta": "0:00:00.934008",
+    "end": "2022-10-21 02:26:26.051821",
+    "invocation": {
+        "module_args": {
+            "_raw_params": "cd \"/home/bevel/platforms/r3-corda/configuration/../../../\"\necho \"---------------GIT PUSH---------------\"\nexport GIT_SSH_COMMAND='ssh -i /home/bevel/build/gitops'\ngit config user.email git@email.com\ngit config user.name SynthNetics\ngit --git-dir=/home/bevel/platforms/r3-corda/configuration/../../..//.git pull\ngit --git-dir=/home/bevel/platforms/r3-corda/configuration/../../..//.git add -A .\n\n# To ignore a directory add it add reset path\nreset_path=platforms/r3-corda/configuration\nif [ -n \"$reset_path\" ]; then\n    git --git-dir=/home/bevel/platforms/r3-corda/configuration/../../..//.git reset \"platforms/r3-corda/configuration\"\nfi  \n\ngit --git-dir=/home/bevel/platforms/r3-corda/configuration/../../..//.git commit -s -m \"[ci skip] Pushing deployment files for namespace and service accounts\" || true\ngit --git-dir=/home/bevel/platforms/r3-corda/configuration/../../..//.git push ssh://git@github.com/SynthNetics/bevel.git HEAD:local  \n",
+            "_uses_shell": true,
+            "argv": null,
+            "chdir": null,
+            "creates": null,
+            "executable": null,
+            "removes": null,
+            "stdin": null,
+            "stdin_add_newline": true,
+            "strip_empty_ends": true,
+            "warn": false
+        }
+    },
+    "msg": "non-zero return code",
+    "rc": 1,
+    "start": "2022-10-21 02:26:25.117813",
+    "stderr": "To ssh://github.com/SynthNetics/bevel.git\n ! [rejected]          HEAD -> local (non-fast-forward)\nerror: failed to push some refs to 'ssh://git@github.com/SynthNetics/bevel.git'\nhint: Updates were rejected because a pushed branch tip is behind its remote\nhint: counterpart. Check out this branch and integrate the remote changes\nhint: (e.g. 'git pull ...') before pushing again.\nhint: See the 'Note about fast-forwards' in 'git push --help' for details.",
+    "stderr_lines": [
+        "To ssh://github.com/SynthNetics/bevel.git",
+        " ! [rejected]          HEAD -> local (non-fast-forward)",
+        "error: failed to push some refs to 'ssh://git@github.com/SynthNetics/bevel.git'",
+        "hint: Updates were rejected because a pushed branch tip is behind its remote",
+        "hint: counterpart. Check out this branch and integrate the remote changes",
+        "hint: (e.g. 'git pull ...') before pushing again.",
+        "hint: See the 'Note about fast-forwards' in 'git push --help' for details."
+    ],
+    "stdout": "---------------GIT PUSH---------------\nAlready up to date.\nUnstaged changes after reset:\nM\tplatforms/r3-corda/configuration/roles/create/k8_component/vars/main.yaml\n[test2 67a0606e] [ci skip] Pushing deployment files for namespace and service accounts\n 4 files changed, 1015 insertions(+)\n create mode 100644 platforms/r3-corda/releases/dev/supplychain-ns/reviewer_rbac.yaml\n create mode 100644 platforms/r3-corda/releases/dev/supplychain-ns/vault-reviewer.yaml\n create mode 100644 platforms/r3-corda/releases/dev/supplychain-ns/vaultAuth.yaml",
+    "stdout_lines": [
+        "---------------GIT PUSH---------------",
+        "Already up to date.",
+        "Unstaged changes after reset:",
+        "M\tplatforms/r3-corda/configuration/roles/create/k8_component/vars/main.yaml",
+        "[test2 67a0606e] [ci skip] Pushing deployment files for namespace and service accounts",
+        " 4 files changed, 1015 insertions(+)",
+        " create mode 100644 platforms/r3-corda/releases/dev/supplychain-ns/reviewer_rbac.yaml",
+        " create mode 100644 platforms/r3-corda/releases/dev/supplychain-ns/vault-reviewer.yaml",
+        " create mode 100644 platforms/r3-corda/releases/dev/supplychain-ns/vaultAuth.yaml"
+    ]
+}
+...ignoring
+
+TASK [/home/bevel/platforms/r3-corda/configuration/../../shared/configuration/roles/git_push : Execute git push for https] ***
+task path: /home/bevel/platforms/shared/configuration/roles/git_push/tasks/main.yaml:42
+skipping: [localhost] => {
+    "changed": false,
+    "skip_reason": "Conditional result was False"
+}
+
+TASK [/home/bevel/platforms/r3-corda/configuration/../../shared/configuration/roles/git_push : stdout for SSH gitpush] ***
+task path: /home/bevel/platforms/shared/configuration/roles/git_push/tasks/main.yaml:67
+ok: [localhost] => {
+    "msg": [
+        "---------------GIT PUSH---------------",
+        "Already up to date.",
+        "Unstaged changes after reset:",
+        "M\tplatforms/r3-corda/configuration/roles/create/k8_component/vars/main.yaml",
+        "[test2 67a0606e] [ci skip] Pushing deployment files for namespace and service accounts",
+        " 4 files changed, 1015 insertions(+)",
+        " create mode 100644 platforms/r3-corda/releases/dev/supplychain-ns/reviewer_rbac.yaml",
+        " create mode 100644 platforms/r3-corda/releases/dev/supplychain-ns/vault-reviewer.yaml",
+        " create mode 100644 platforms/r3-corda/releases/dev/supplychain-ns/vaultAuth.yaml"
+    ]
+}
+
+TASK [/home/bevel/platforms/r3-corda/configuration/../../shared/configuration/roles/git_push : stderr for SSH gitpush] ***
+task path: /home/bevel/platforms/shared/configuration/roles/git_push/tasks/main.yaml:76
+ok: [localhost] => {
+    "msg": [
+        "To ssh://github.com/SynthNetics/bevel.git",
+        " ! [rejected]          HEAD -> local (non-fast-forward)",
+        "error: failed to push some refs to 'ssh://git@github.com/SynthNetics/bevel.git'",
+        "hint: Updates were rejected because a pushed branch tip is behind its remote",
+        "hint: counterpart. Check out this branch and integrate the remote changes",
+        "hint: (e.g. 'git pull ...') before pushing again.",
+        "hint: See the 'Note about fast-forwards' in 'git push --help' for details."
+    ]
+}
+
+TASK [/home/bevel/platforms/r3-corda/configuration/../../shared/configuration/roles/git_push : stdout for gitpush] ***
+task path: /home/bevel/platforms/shared/configuration/roles/git_push/tasks/main.yaml:86
+skipping: [localhost] => {}
+
+TASK [/home/bevel/platforms/r3-corda/configuration/../../shared/configuration/roles/git_push : stderr for git_push] ***
+task path: /home/bevel/platforms/shared/configuration/roles/git_push/tasks/main.yaml:94
+skipping: [localhost] => {}
+META: role_complete for localhost
+META: role_complete for localhost
+
+TASK [Check if namespace exists] ***********************************************
+task path: /home/bevel/platforms/r3-corda/configuration/roles/create/namespace_serviceaccount/tasks/main.yaml:9
+
+TASK [/home/bevel/platforms/r3-corda/configuration/../../shared/configuration/roles/check/k8_component : Check Namespace manufacturer-ns is created] ***
+task path: /home/bevel/platforms/shared/configuration/roles/check/k8_component/tasks/main.yaml:13
+<localhost> ESTABLISH LOCAL CONNECTION FOR USER: root
+<localhost> EXEC /bin/sh -c 'echo ~root && sleep 0'
+<localhost> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /root/.ansible/tmp `"&& mkdir "` echo /root/.ansible/tmp/ansible-tmp-1666319186.4622037-2626-167545153407520 `" && echo ansible-tmp-1666319186.4622037-2626-167545153407520="` echo /root/.ansible/tmp/ansible-tmp-1666319186.4622037-2626-167545153407520 `" ) && sleep 0'
+redirecting (type: modules) ansible.builtin.k8s_info to kubernetes.core.k8s_info
+Using module file /usr/local/lib/python3.8/dist-packages/ansible_collections/kubernetes/core/plugins/modules/k8s_info.py
+<localhost> PUT /root/.ansible/tmp/ansible-local-4hfwxj272/tmp9l04px_0 TO /root/.ansible/tmp/ansible-tmp-1666319186.4622037-2626-167545153407520/AnsiballZ_k8s_info.py
+<localhost> EXEC /bin/sh -c 'chmod u+x /root/.ansible/tmp/ansible-tmp-1666319186.4622037-2626-167545153407520/ /root/.ansible/tmp/ansible-tmp-1666319186.4622037-2626-167545153407520/AnsiballZ_k8s_info.py && sleep 0'
+<localhost> EXEC /bin/sh -c '/usr/bin/python3 /root/.ansible/tmp/ansible-tmp-1666319186.4622037-2626-167545153407520/AnsiballZ_k8s_info.py && sleep 0'
+<localhost> EXEC /bin/sh -c 'rm -f -r /root/.ansible/tmp/ansible-tmp-1666319186.4622037-2626-167545153407520/ > /dev/null 2>&1 && sleep 0'
+ok: [localhost] => {
+    "api_found": true,
+    "changed": false,
+    "invocation": {
+        "module_args": {
+            "api_key": null,
+            "api_version": "v1",
+            "ca_cert": null,
+            "client_cert": null,
+            "client_key": null,
+            "context": "minikube",
+            "field_selectors": [],
+            "host": null,
+            "impersonate_groups": null,
+            "impersonate_user": null,
+            "kind": "Namespace",
+            "kubeconfig": "/home/bevel/build/config",
+            "label_selectors": [],
+            "name": "manufacturer-ns",
+            "namespace": null,
+            "no_proxy": null,
+            "password": null,
+            "persist_config": null,
+            "proxy": null,
+            "proxy_headers": null,
+            "username": null,
+            "validate_certs": null,
+            "wait": false,
+            "wait_condition": null,
+            "wait_sleep": 5,
+            "wait_timeout": 120
+        }
+    },
+    "resources": [
+        {
+            "apiVersion": "v1",
+            "kind": "Namespace",
+            "metadata": {
+                "creationTimestamp": "2022-09-30T23:26:56Z",
+                "labels": {
+                    "kubernetes.io/metadata.name": "manufacturer-ns",
+                    "kustomize.toolkit.fluxcd.io/name": "flux-local",
+                    "kustomize.toolkit.fluxcd.io/namespace": "flux-local"
+                },
+                "managedFields": [
+                    {
+                        "apiVersion": "v1",
+                        "fieldsType": "FieldsV1",
+                        "fieldsV1": {
+                            "f:metadata": {
+                                "f:labels": {
+                                    "f:kustomize.toolkit.fluxcd.io/name": {},
+                                    "f:kustomize.toolkit.fluxcd.io/namespace": {}
+                                }
+                            }
+                        },
+                        "manager": "kustomize-controller",
+                        "operation": "Apply",
+                        "time": "2022-09-30T23:26:56Z"
+                    }
+                ],
+                "name": "manufacturer-ns",
+                "resourceVersion": "5022",
+                "uid": "4dccf378-ccfd-4c9a-8986-dd3b068f37c6"
+            },
+            "spec": {
+                "finalizers": [
+                    "kubernetes"
+                ]
+            },
+            "status": {
+                "phase": "Active"
+            }
+        }
+    ]
+}
+
+TASK [/home/bevel/platforms/r3-corda/configuration/../../shared/configuration/roles/check/k8_component : Wait for Namespace manufacturer-ns] ***
+task path: /home/bevel/platforms/shared/configuration/roles/check/k8_component/tasks/main.yaml:23
+skipping: [localhost] => {
+    "changed": false,
+    "skip_reason": "Conditional result was False"
+}
+
+TASK [/home/bevel/platforms/r3-corda/configuration/../../shared/configuration/roles/check/k8_component : Check Namespace manufacturer-ns is created] ***
+task path: /home/bevel/platforms/shared/configuration/roles/check/k8_component/tasks/main.yaml:38
+skipping: [localhost] => {
+    "changed": false,
+    "skip_reason": "Conditional result was False"
+}
+
+TASK [/home/bevel/platforms/r3-corda/configuration/../../shared/configuration/roles/check/k8_component : Wait for Namespace manufacturer-ns] ***
+task path: /home/bevel/platforms/shared/configuration/roles/check/k8_component/tasks/main.yaml:51
+skipping: [localhost] => {
+    "changed": false,
+    "skip_reason": "Conditional result was False"
+}
+META: role_complete for localhost
+
+TASK [create/namespace_serviceaccount : Set the result of namespace check to a local variable] ***
+task path: /home/bevel/platforms/r3-corda/configuration/roles/create/namespace_serviceaccount/tasks/main.yaml:18
+ok: [localhost] => {
+    "ansible_facts": {
+        "get_namespace": {
+            "api_found": true,
+            "changed": false,
+            "failed": false,
+            "resources": [
+                {
+                    "apiVersion": "v1",
+                    "kind": "Namespace",
+                    "metadata": {
+                        "creationTimestamp": "2022-09-30T23:26:56Z",
+                        "labels": {
+                            "kubernetes.io/metadata.name": "manufacturer-ns",
+                            "kustomize.toolkit.fluxcd.io/name": "flux-local",
+                            "kustomize.toolkit.fluxcd.io/namespace": "flux-local"
+                        },
+                        "managedFields": [
+                            {
+                                "apiVersion": "v1",
+                                "fieldsType": "FieldsV1",
+                                "fieldsV1": {
+                                    "f:metadata": {
+                                        "f:labels": {
+                                            "f:kustomize.toolkit.fluxcd.io/name": {},
+                                            "f:kustomize.toolkit.fluxcd.io/namespace": {}
+                                        }
+                                    }
+                                },
+                                "manager": "kustomize-controller",
+                                "operation": "Apply",
+                                "time": "2022-09-30T23:26:56Z"
+                            }
+                        ],
+                        "name": "manufacturer-ns",
+                        "resourceVersion": "5022",
+                        "uid": "4dccf378-ccfd-4c9a-8986-dd3b068f37c6"
+                    },
+                    "spec": {
+                        "finalizers": [
+                            "kubernetes"
+                        ]
+                    },
+                    "status": {
+                        "phase": "Active"
+                    }
+                }
+            ]
+        }
+    },
+    "changed": false
+}
+
+TASK [Create namespace for manufacturer] ***************************************
+task path: /home/bevel/platforms/r3-corda/configuration/roles/create/namespace_serviceaccount/tasks/main.yaml:23
+skipping: [localhost] => {
+    "changed": false,
+    "skip_reason": "Conditional result was False"
+}
+
+TASK [Create vault auth service account for manufacturer] **********************
+task path: /home/bevel/platforms/r3-corda/configuration/roles/create/namespace_serviceaccount/tasks/main.yaml:34
+
+TASK [create/k8_component : stat] **********************************************
+task path: /home/bevel/platforms/r3-corda/configuration/roles/create/k8_component/tasks/main.yaml:17
+<localhost> ESTABLISH LOCAL CONNECTION FOR USER: root
+<localhost> EXEC /bin/sh -c 'echo ~root && sleep 0'
+<localhost> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /root/.ansible/tmp `"&& mkdir "` echo /root/.ansible/tmp/ansible-tmp-1666319187.420136-2665-213344525675441 `" && echo ansible-tmp-1666319187.420136-2665-213344525675441="` echo /root/.ansible/tmp/ansible-tmp-1666319187.420136-2665-213344525675441 `" ) && sleep 0'
+Using module file /usr/local/lib/python3.8/dist-packages/ansible/modules/stat.py
+<localhost> PUT /root/.ansible/tmp/ansible-local-4hfwxj272/tmp01z1sxp4 TO /root/.ansible/tmp/ansible-tmp-1666319187.420136-2665-213344525675441/AnsiballZ_stat.py
+<localhost> EXEC /bin/sh -c 'chmod u+x /root/.ansible/tmp/ansible-tmp-1666319187.420136-2665-213344525675441/ /root/.ansible/tmp/ansible-tmp-1666319187.420136-2665-213344525675441/AnsiballZ_stat.py && sleep 0'
+<localhost> EXEC /bin/sh -c '/usr/bin/python3 /root/.ansible/tmp/ansible-tmp-1666319187.420136-2665-213344525675441/AnsiballZ_stat.py && sleep 0'
+<localhost> EXEC /bin/sh -c 'rm -f -r /root/.ansible/tmp/ansible-tmp-1666319187.420136-2665-213344525675441/ > /dev/null 2>&1 && sleep 0'
+ok: [localhost] => {
+    "changed": false,
+    "invocation": {
+        "module_args": {
+            "checksum_algorithm": "sha1",
+            "follow": false,
+            "get_attributes": true,
+            "get_checksum": true,
+            "get_md5": false,
+            "get_mime": true,
+            "path": "/home/bevel/platforms/r3-corda/configuration/../../../platforms/r3-corda/releases/dev/manufacturer-ns/vaultAuth.yaml"
+        }
+    },
+    "stat": {
+        "exists": false
+    }
+}
+
+TASK [Ensures /home/bevel/platforms/r3-corda/configuration/../../../platforms/r3-corda/releases/dev/manufacturer-ns dir exists] ***
+task path: /home/bevel/platforms/r3-corda/configuration/roles/create/k8_component/tasks/main.yaml:22
+
+TASK [/home/bevel/platforms/r3-corda/configuration/../../shared/configuration/roles/check/setup : check if dir exists or not] ***
+task path: /home/bevel/platforms/shared/configuration/roles/check/setup/tasks/main.yaml:9
+<localhost> ESTABLISH LOCAL CONNECTION FOR USER: root
+<localhost> EXEC /bin/sh -c 'echo ~root && sleep 0'
+<localhost> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /root/.ansible/tmp `"&& mkdir "` echo /root/.ansible/tmp/ansible-tmp-1666319187.691137-2693-163220765981112 `" && echo ansible-tmp-1666319187.691137-2693-163220765981112="` echo /root/.ansible/tmp/ansible-tmp-1666319187.691137-2693-163220765981112 `" ) && sleep 0'
+Using module file /usr/local/lib/python3.8/dist-packages/ansible/modules/stat.py
+<localhost> PUT /root/.ansible/tmp/ansible-local-4hfwxj272/tmp8p5h_72e TO /root/.ansible/tmp/ansible-tmp-1666319187.691137-2693-163220765981112/AnsiballZ_stat.py
+<localhost> EXEC /bin/sh -c 'chmod u+x /root/.ansible/tmp/ansible-tmp-1666319187.691137-2693-163220765981112/ /root/.ansible/tmp/ansible-tmp-1666319187.691137-2693-163220765981112/AnsiballZ_stat.py && sleep 0'
+<localhost> EXEC /bin/sh -c '/usr/bin/python3 /root/.ansible/tmp/ansible-tmp-1666319187.691137-2693-163220765981112/AnsiballZ_stat.py && sleep 0'
+<localhost> EXEC /bin/sh -c 'rm -f -r /root/.ansible/tmp/ansible-tmp-1666319187.691137-2693-163220765981112/ > /dev/null 2>&1 && sleep 0'
+ok: [localhost] => {
+    "changed": false,
+    "invocation": {
+        "module_args": {
+            "checksum_algorithm": "sha1",
+            "follow": false,
+            "get_attributes": true,
+            "get_checksum": true,
+            "get_md5": false,
+            "get_mime": true,
+            "path": "/home/bevel/platforms/r3-corda/configuration/../../../platforms/r3-corda/releases/dev/manufacturer-ns"
+        }
+    },
+    "stat": {
+        "exists": false
+    }
+}
+
+TASK [/home/bevel/platforms/r3-corda/configuration/../../shared/configuration/roles/check/setup : Ensures dir exists] ***
+task path: /home/bevel/platforms/shared/configuration/roles/check/setup/tasks/main.yaml:17
+<localhost> ESTABLISH LOCAL CONNECTION FOR USER: root
+<localhost> EXEC /bin/sh -c 'echo ~root && sleep 0'
+<localhost> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /root/.ansible/tmp `"&& mkdir "` echo /root/.ansible/tmp/ansible-tmp-1666319187.893599-2719-16538634807302 `" && echo ansible-tmp-1666319187.893599-2719-16538634807302="` echo /root/.ansible/tmp/ansible-tmp-1666319187.893599-2719-16538634807302 `" ) && sleep 0'
+Using module file /usr/local/lib/python3.8/dist-packages/ansible/modules/file.py
+<localhost> PUT /root/.ansible/tmp/ansible-local-4hfwxj272/tmprmkackuv TO /root/.ansible/tmp/ansible-tmp-1666319187.893599-2719-16538634807302/AnsiballZ_file.py
+<localhost> EXEC /bin/sh -c 'chmod u+x /root/.ansible/tmp/ansible-tmp-1666319187.893599-2719-16538634807302/ /root/.ansible/tmp/ansible-tmp-1666319187.893599-2719-16538634807302/AnsiballZ_file.py && sleep 0'
+<localhost> EXEC /bin/sh -c '/usr/bin/python3 /root/.ansible/tmp/ansible-tmp-1666319187.893599-2719-16538634807302/AnsiballZ_file.py && sleep 0'
+<localhost> EXEC /bin/sh -c 'rm -f -r /root/.ansible/tmp/ansible-tmp-1666319187.893599-2719-16538634807302/ > /dev/null 2>&1 && sleep 0'
+changed: [localhost] => {
+    "changed": true,
+    "diff": {
+        "after": {
+            "path": "/home/bevel/platforms/r3-corda/configuration/../../../platforms/r3-corda/releases/dev/manufacturer-ns",
+            "state": "directory"
+        },
+        "before": {
+            "path": "/home/bevel/platforms/r3-corda/configuration/../../../platforms/r3-corda/releases/dev/manufacturer-ns",
+            "state": "absent"
+        }
+    },
+    "gid": 0,
+    "group": "root",
+    "invocation": {
+        "module_args": {
+            "_diff_peek": null,
+            "_original_basename": null,
+            "access_time": null,
+            "access_time_format": "%Y%m%d%H%M.%S",
+            "attributes": null,
+            "follow": true,
+            "force": false,
+            "group": null,
+            "mode": "0755",
+            "modification_time": null,
+            "modification_time_format": "%Y%m%d%H%M.%S",
+            "owner": null,
+            "path": "/home/bevel/platforms/r3-corda/configuration/../../../platforms/r3-corda/releases/dev/manufacturer-ns",
+            "recurse": true,
+            "selevel": null,
+            "serole": null,
+            "setype": null,
+            "seuser": null,
+            "src": null,
+            "state": "directory",
+            "unsafe_writes": false
+        }
+    },
+    "mode": "0755",
+    "owner": "root",
+    "path": "/home/bevel/platforms/r3-corda/configuration/../../../platforms/r3-corda/releases/dev/manufacturer-ns",
+    "size": 0,
+    "state": "directory",
+    "uid": 0
+}
+
+TASK [/home/bevel/platforms/r3-corda/configuration/../../shared/configuration/roles/check/setup : Check if Kubernetes-auth already created for Organization] ***
+task path: /home/bevel/platforms/shared/configuration/roles/check/setup/tasks/main.yaml:26
+skipping: [localhost] => {
+    "changed": false,
+    "skip_reason": "Conditional result was False"
+}
+
+TASK [/home/bevel/platforms/r3-corda/configuration/../../shared/configuration/roles/check/setup : Check if policy exists] ***
+task path: /home/bevel/platforms/shared/configuration/roles/check/setup/tasks/main.yaml:36
+skipping: [localhost] => {
+    "changed": false,
+    "skip_reason": "Conditional result was False"
+}
+
+TASK [/home/bevel/platforms/r3-corda/configuration/../../shared/configuration/roles/check/setup : Check docker cred exists] ***
+task path: /home/bevel/platforms/shared/configuration/roles/check/setup/tasks/main.yaml:47
+skipping: [localhost] => {
+    "changed": false,
+    "skip_reason": "Conditional result was False"
+}
+
+TASK [/home/bevel/platforms/r3-corda/configuration/../../shared/configuration/roles/check/setup : Check git https cred exists] ***
+task path: /home/bevel/platforms/shared/configuration/roles/check/setup/tasks/main.yaml:58
+skipping: [localhost] => {
+    "changed": false,
+    "skip_reason": "Conditional result was False"
+}
+
+TASK [/home/bevel/platforms/r3-corda/configuration/../../shared/configuration/roles/check/setup : check if certs exists in vault.] ***
+task path: /home/bevel/platforms/shared/configuration/roles/check/setup/tasks/main.yaml:69
+skipping: [localhost] => {
+    "changed": false,
+    "skip_reason": "Conditional result was False"
+}
+META: role_complete for localhost
+
+TASK [create/k8_component : create vaultAuth file for manufacturer-ns] *********
+task path: /home/bevel/platforms/r3-corda/configuration/roles/create/k8_component/tasks/main.yaml:32
+<localhost> ESTABLISH LOCAL CONNECTION FOR USER: root
+<localhost> EXEC /bin/sh -c 'echo ~root && sleep 0'
+<localhost> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /root/.ansible/tmp `"&& mkdir "` echo /root/.ansible/tmp/ansible-tmp-1666319188.3173141-2755-133621792167598 `" && echo ansible-tmp-1666319188.3173141-2755-133621792167598="` echo /root/.ansible/tmp/ansible-tmp-1666319188.3173141-2755-133621792167598 `" ) && sleep 0'
+Using module file /usr/local/lib/python3.8/dist-packages/ansible/modules/stat.py
+<localhost> PUT /root/.ansible/tmp/ansible-local-4hfwxj272/tmphofma496 TO /root/.ansible/tmp/ansible-tmp-1666319188.3173141-2755-133621792167598/AnsiballZ_stat.py
+<localhost> EXEC /bin/sh -c 'chmod u+x /root/.ansible/tmp/ansible-tmp-1666319188.3173141-2755-133621792167598/ /root/.ansible/tmp/ansible-tmp-1666319188.3173141-2755-133621792167598/AnsiballZ_stat.py && sleep 0'
+<localhost> EXEC /bin/sh -c '/usr/bin/python3 /root/.ansible/tmp/ansible-tmp-1666319188.3173141-2755-133621792167598/AnsiballZ_stat.py && sleep 0'
+<localhost> PUT /root/.ansible/tmp/ansible-local-4hfwxj272/tmp0fvi12p_/vault_auth.tpl TO /root/.ansible/tmp/ansible-tmp-1666319188.3173141-2755-133621792167598/source
+<localhost> EXEC /bin/sh -c 'chmod u+x /root/.ansible/tmp/ansible-tmp-1666319188.3173141-2755-133621792167598/ /root/.ansible/tmp/ansible-tmp-1666319188.3173141-2755-133621792167598/source && sleep 0'
+Using module file /usr/local/lib/python3.8/dist-packages/ansible/modules/copy.py
+<localhost> PUT /root/.ansible/tmp/ansible-local-4hfwxj272/tmpq07k4xb_ TO /root/.ansible/tmp/ansible-tmp-1666319188.3173141-2755-133621792167598/AnsiballZ_copy.py
+<localhost> EXEC /bin/sh -c 'chmod u+x /root/.ansible/tmp/ansible-tmp-1666319188.3173141-2755-133621792167598/ /root/.ansible/tmp/ansible-tmp-1666319188.3173141-2755-133621792167598/AnsiballZ_copy.py && sleep 0'
+<localhost> EXEC /bin/sh -c '/usr/bin/python3 /root/.ansible/tmp/ansible-tmp-1666319188.3173141-2755-133621792167598/AnsiballZ_copy.py && sleep 0'
+<localhost> EXEC /bin/sh -c 'rm -f -r /root/.ansible/tmp/ansible-tmp-1666319188.3173141-2755-133621792167598/ > /dev/null 2>&1 && sleep 0'
+changed: [localhost] => {
+    "changed": true,
+    "checksum": "a9cee00aea4752ff91659435c6ac72d497f324a0",
+    "dest": "/home/bevel/platforms/r3-corda/configuration/../../../platforms/r3-corda/releases/dev/manufacturer-ns/vaultAuth.yaml",
+    "diff": [],
+    "gid": 0,
+    "group": "root",
+    "invocation": {
+        "module_args": {
+            "_original_basename": "vault_auth.tpl",
+            "attributes": null,
+            "backup": false,
+            "checksum": "a9cee00aea4752ff91659435c6ac72d497f324a0",
+            "content": null,
+            "dest": "/home/bevel/platforms/r3-corda/configuration/../../../platforms/r3-corda/releases/dev/manufacturer-ns/vaultAuth.yaml",
+            "directory_mode": null,
+            "follow": false,
+            "force": true,
+            "group": null,
+            "local_follow": null,
+            "mode": null,
+            "owner": null,
+            "remote_src": null,
+            "selevel": null,
+            "serole": null,
+            "setype": null,
+            "seuser": null,
+            "src": "/root/.ansible/tmp/ansible-tmp-1666319188.3173141-2755-133621792167598/source",
+            "unsafe_writes": false,
+            "validate": null
+        }
+    },
+    "md5sum": "927fb12b5dcc7ac9140a173fdfb47e41",
+    "mode": "0644",
+    "owner": "root",
+    "size": 93,
+    "src": "/root/.ansible/tmp/ansible-tmp-1666319188.3173141-2755-133621792167598/source",
+    "state": "file",
+    "uid": 0
+}
+
+TASK [Helm lint] ***************************************************************
+task path: /home/bevel/platforms/r3-corda/configuration/roles/create/k8_component/tasks/main.yaml:44
+skipping: [localhost] => {
+    "changed": false,
+    "skip_reason": "Conditional result was False"
+}
+META: role_complete for localhost
+
+TASK [Create vault reviewer for manufacturer] **********************************
+task path: /home/bevel/platforms/r3-corda/configuration/roles/create/namespace_serviceaccount/tasks/main.yaml:44
+
+TASK [create/k8_component : stat] **********************************************
+task path: /home/bevel/platforms/r3-corda/configuration/roles/create/k8_component/tasks/main.yaml:17
+<localhost> ESTABLISH LOCAL CONNECTION FOR USER: root
+<localhost> EXEC /bin/sh -c 'echo ~root && sleep 0'
+<localhost> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /root/.ansible/tmp `"&& mkdir "` echo /root/.ansible/tmp/ansible-tmp-1666319188.8011334-2798-86313432280345 `" && echo ansible-tmp-1666319188.8011334-2798-86313432280345="` echo /root/.ansible/tmp/ansible-tmp-1666319188.8011334-2798-86313432280345 `" ) && sleep 0'
+Using module file /usr/local/lib/python3.8/dist-packages/ansible/modules/stat.py
+<localhost> PUT /root/.ansible/tmp/ansible-local-4hfwxj272/tmp6knxmfta TO /root/.ansible/tmp/ansible-tmp-1666319188.8011334-2798-86313432280345/AnsiballZ_stat.py
+<localhost> EXEC /bin/sh -c 'chmod u+x /root/.ansible/tmp/ansible-tmp-1666319188.8011334-2798-86313432280345/ /root/.ansible/tmp/ansible-tmp-1666319188.8011334-2798-86313432280345/AnsiballZ_stat.py && sleep 0'
+<localhost> EXEC /bin/sh -c '/usr/bin/python3 /root/.ansible/tmp/ansible-tmp-1666319188.8011334-2798-86313432280345/AnsiballZ_stat.py && sleep 0'
+<localhost> EXEC /bin/sh -c 'rm -f -r /root/.ansible/tmp/ansible-tmp-1666319188.8011334-2798-86313432280345/ > /dev/null 2>&1 && sleep 0'
+ok: [localhost] => {
+    "changed": false,
+    "invocation": {
+        "module_args": {
+            "checksum_algorithm": "sha1",
+            "follow": false,
+            "get_attributes": true,
+            "get_checksum": true,
+            "get_md5": false,
+            "get_mime": true,
+            "path": "/home/bevel/platforms/r3-corda/configuration/../../../platforms/r3-corda/releases/dev/manufacturer-ns/vault-reviewer.yaml"
+        }
+    },
+    "stat": {
+        "exists": false
+    }
+}
+
+TASK [Ensures /home/bevel/platforms/r3-corda/configuration/../../../platforms/r3-corda/releases/dev/manufacturer-ns dir exists] ***
+task path: /home/bevel/platforms/r3-corda/configuration/roles/create/k8_component/tasks/main.yaml:22
+
+TASK [/home/bevel/platforms/r3-corda/configuration/../../shared/configuration/roles/check/setup : check if dir exists or not] ***
+task path: /home/bevel/platforms/shared/configuration/roles/check/setup/tasks/main.yaml:9
+<localhost> ESTABLISH LOCAL CONNECTION FOR USER: root
+<localhost> EXEC /bin/sh -c 'echo ~root && sleep 0'
+<localhost> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /root/.ansible/tmp `"&& mkdir "` echo /root/.ansible/tmp/ansible-tmp-1666319189.0800834-2826-72348064656175 `" && echo ansible-tmp-1666319189.0800834-2826-72348064656175="` echo /root/.ansible/tmp/ansible-tmp-1666319189.0800834-2826-72348064656175 `" ) && sleep 0'
+Using module file /usr/local/lib/python3.8/dist-packages/ansible/modules/stat.py
+<localhost> PUT /root/.ansible/tmp/ansible-local-4hfwxj272/tmp9oq955z9 TO /root/.ansible/tmp/ansible-tmp-1666319189.0800834-2826-72348064656175/AnsiballZ_stat.py
+<localhost> EXEC /bin/sh -c 'chmod u+x /root/.ansible/tmp/ansible-tmp-1666319189.0800834-2826-72348064656175/ /root/.ansible/tmp/ansible-tmp-1666319189.0800834-2826-72348064656175/AnsiballZ_stat.py && sleep 0'
+<localhost> EXEC /bin/sh -c '/usr/bin/python3 /root/.ansible/tmp/ansible-tmp-1666319189.0800834-2826-72348064656175/AnsiballZ_stat.py && sleep 0'
+<localhost> EXEC /bin/sh -c 'rm -f -r /root/.ansible/tmp/ansible-tmp-1666319189.0800834-2826-72348064656175/ > /dev/null 2>&1 && sleep 0'
+ok: [localhost] => {
+    "changed": false,
+    "invocation": {
+        "module_args": {
+            "checksum_algorithm": "sha1",
+            "follow": false,
+            "get_attributes": true,
+            "get_checksum": true,
+            "get_md5": false,
+            "get_mime": true,
+            "path": "/home/bevel/platforms/r3-corda/configuration/../../../platforms/r3-corda/releases/dev/manufacturer-ns"
+        }
+    },
+    "stat": {
+        "atime": 1666319188.0370977,
+        "attr_flags": "",
+        "attributes": [],
+        "block_size": 4096,
+        "blocks": 0,
+        "charset": "unknown",
+        "ctime": 1666319188.6140985,
+        "dev": 41,
+        "device_type": 0,
+        "executable": true,
+        "exists": true,
+        "gid": 0,
+        "gr_name": "root",
+        "inode": 11310665,
+        "isblk": false,
+        "ischr": false,
+        "isdir": true,
+        "isfifo": false,
+        "isgid": false,
+        "islnk": false,
+        "isreg": false,
+        "issock": false,
+        "isuid": false,
+        "mimetype": "unknown",
+        "mode": "0755",
+        "mtime": 1666319188.6140985,
+        "nlink": 1,
+        "path": "/home/bevel/platforms/r3-corda/configuration/../../../platforms/r3-corda/releases/dev/manufacturer-ns",
+        "pw_name": "root",
+        "readable": true,
+        "rgrp": true,
+        "roth": true,
+        "rusr": true,
+        "size": 28,
+        "uid": 0,
+        "version": "59642",
+        "wgrp": false,
+        "woth": false,
+        "writeable": true,
+        "wusr": true,
+        "xgrp": true,
+        "xoth": true,
+        "xusr": true
+    }
+}
+
+TASK [/home/bevel/platforms/r3-corda/configuration/../../shared/configuration/roles/check/setup : Ensures dir exists] ***
+task path: /home/bevel/platforms/shared/configuration/roles/check/setup/tasks/main.yaml:17
+skipping: [localhost] => {
+    "changed": false,
+    "skip_reason": "Conditional result was False"
+}
+
+TASK [/home/bevel/platforms/r3-corda/configuration/../../shared/configuration/roles/check/setup : Check if Kubernetes-auth already created for Organization] ***
+task path: /home/bevel/platforms/shared/configuration/roles/check/setup/tasks/main.yaml:26
+skipping: [localhost] => {
+    "changed": false,
+    "skip_reason": "Conditional result was False"
+}
+
+TASK [/home/bevel/platforms/r3-corda/configuration/../../shared/configuration/roles/check/setup : Check if policy exists] ***
+task path: /home/bevel/platforms/shared/configuration/roles/check/setup/tasks/main.yaml:36
+skipping: [localhost] => {
+    "changed": false,
+    "skip_reason": "Conditional result was False"
+}
+
+TASK [/home/bevel/platforms/r3-corda/configuration/../../shared/configuration/roles/check/setup : Check docker cred exists] ***
+task path: /home/bevel/platforms/shared/configuration/roles/check/setup/tasks/main.yaml:47
+skipping: [localhost] => {
+    "changed": false,
+    "skip_reason": "Conditional result was False"
+}
+
+TASK [/home/bevel/platforms/r3-corda/configuration/../../shared/configuration/roles/check/setup : Check git https cred exists] ***
+task path: /home/bevel/platforms/shared/configuration/roles/check/setup/tasks/main.yaml:58
+skipping: [localhost] => {
+    "changed": false,
+    "skip_reason": "Conditional result was False"
+}
+
+TASK [/home/bevel/platforms/r3-corda/configuration/../../shared/configuration/roles/check/setup : check if certs exists in vault.] ***
+task path: /home/bevel/platforms/shared/configuration/roles/check/setup/tasks/main.yaml:69
+skipping: [localhost] => {
+    "changed": false,
+    "skip_reason": "Conditional result was False"
+}
+META: role_complete for localhost
+
+TASK [create/k8_component : create vault-reviewer file for manufacturer-ns] ****
+task path: /home/bevel/platforms/r3-corda/configuration/roles/create/k8_component/tasks/main.yaml:32
+<localhost> ESTABLISH LOCAL CONNECTION FOR USER: root
+<localhost> EXEC /bin/sh -c 'echo ~root && sleep 0'
+<localhost> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /root/.ansible/tmp `"&& mkdir "` echo /root/.ansible/tmp/ansible-tmp-1666319189.56757-2865-194093467763830 `" && echo ansible-tmp-1666319189.56757-2865-194093467763830="` echo /root/.ansible/tmp/ansible-tmp-1666319189.56757-2865-194093467763830 `" ) && sleep 0'
+Using module file /usr/local/lib/python3.8/dist-packages/ansible/modules/stat.py
+<localhost> PUT /root/.ansible/tmp/ansible-local-4hfwxj272/tmpy97nuxhw TO /root/.ansible/tmp/ansible-tmp-1666319189.56757-2865-194093467763830/AnsiballZ_stat.py
+<localhost> EXEC /bin/sh -c 'chmod u+x /root/.ansible/tmp/ansible-tmp-1666319189.56757-2865-194093467763830/ /root/.ansible/tmp/ansible-tmp-1666319189.56757-2865-194093467763830/AnsiballZ_stat.py && sleep 0'
+<localhost> EXEC /bin/sh -c '/usr/bin/python3 /root/.ansible/tmp/ansible-tmp-1666319189.56757-2865-194093467763830/AnsiballZ_stat.py && sleep 0'
+<localhost> PUT /root/.ansible/tmp/ansible-local-4hfwxj272/tmp_4jqnxo0/reviewer.tpl TO /root/.ansible/tmp/ansible-tmp-1666319189.56757-2865-194093467763830/source
+<localhost> EXEC /bin/sh -c 'chmod u+x /root/.ansible/tmp/ansible-tmp-1666319189.56757-2865-194093467763830/ /root/.ansible/tmp/ansible-tmp-1666319189.56757-2865-194093467763830/source && sleep 0'
+Using module file /usr/local/lib/python3.8/dist-packages/ansible/modules/copy.py
+<localhost> PUT /root/.ansible/tmp/ansible-local-4hfwxj272/tmpz_m4ki8j TO /root/.ansible/tmp/ansible-tmp-1666319189.56757-2865-194093467763830/AnsiballZ_copy.py
+<localhost> EXEC /bin/sh -c 'chmod u+x /root/.ansible/tmp/ansible-tmp-1666319189.56757-2865-194093467763830/ /root/.ansible/tmp/ansible-tmp-1666319189.56757-2865-194093467763830/AnsiballZ_copy.py && sleep 0'
+<localhost> EXEC /bin/sh -c '/usr/bin/python3 /root/.ansible/tmp/ansible-tmp-1666319189.56757-2865-194093467763830/AnsiballZ_copy.py && sleep 0'
+<localhost> EXEC /bin/sh -c 'rm -f -r /root/.ansible/tmp/ansible-tmp-1666319189.56757-2865-194093467763830/ > /dev/null 2>&1 && sleep 0'
+changed: [localhost] => {
+    "changed": true,
+    "checksum": "d42acd499847c49c4dc3d13a2a113b3130c4d334",
+    "dest": "/home/bevel/platforms/r3-corda/configuration/../../../platforms/r3-corda/releases/dev/manufacturer-ns/vault-reviewer.yaml",
+    "diff": [],
+    "gid": 0,
+    "group": "root",
+    "invocation": {
+        "module_args": {
+            "_original_basename": "reviewer.tpl",
+            "attributes": null,
+            "backup": false,
+            "checksum": "d42acd499847c49c4dc3d13a2a113b3130c4d334",
+            "content": null,
+            "dest": "/home/bevel/platforms/r3-corda/configuration/../../../platforms/r3-corda/releases/dev/manufacturer-ns/vault-reviewer.yaml",
+            "directory_mode": null,
+            "follow": false,
+            "force": true,
+            "group": null,
+            "local_follow": null,
+            "mode": null,
+            "owner": null,
+            "remote_src": null,
+            "selevel": null,
+            "serole": null,
+            "setype": null,
+            "seuser": null,
+            "src": "/root/.ansible/tmp/ansible-tmp-1666319189.56757-2865-194093467763830/source",
+            "unsafe_writes": false,
+            "validate": null
+        }
+    },
+    "md5sum": "0bb83096e2a370c4c8d423c8095232d4",
+    "mode": "0644",
+    "owner": "root",
+    "size": 97,
+    "src": "/root/.ansible/tmp/ansible-tmp-1666319189.56757-2865-194093467763830/source",
+    "state": "file",
+    "uid": 0
+}
+
+TASK [Helm lint] ***************************************************************
+task path: /home/bevel/platforms/r3-corda/configuration/roles/create/k8_component/tasks/main.yaml:44
+skipping: [localhost] => {
+    "changed": false,
+    "skip_reason": "Conditional result was False"
+}
+META: role_complete for localhost
+
+TASK [Create clusterrolebinding for manufacturer] ******************************
+task path: /home/bevel/platforms/r3-corda/configuration/roles/create/namespace_serviceaccount/tasks/main.yaml:54
+
+TASK [create/k8_component : stat] **********************************************
+task path: /home/bevel/platforms/r3-corda/configuration/roles/create/k8_component/tasks/main.yaml:17
+<localhost> ESTABLISH LOCAL CONNECTION FOR USER: root
+<localhost> EXEC /bin/sh -c 'echo ~root && sleep 0'
+<localhost> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /root/.ansible/tmp `"&& mkdir "` echo /root/.ansible/tmp/ansible-tmp-1666319190.087322-2908-219927881113707 `" && echo ansible-tmp-1666319190.087322-2908-219927881113707="` echo /root/.ansible/tmp/ansible-tmp-1666319190.087322-2908-219927881113707 `" ) && sleep 0'
+Using module file /usr/local/lib/python3.8/dist-packages/ansible/modules/stat.py
+<localhost> PUT /root/.ansible/tmp/ansible-local-4hfwxj272/tmpokgsy16i TO /root/.ansible/tmp/ansible-tmp-1666319190.087322-2908-219927881113707/AnsiballZ_stat.py
+<localhost> EXEC /bin/sh -c 'chmod u+x /root/.ansible/tmp/ansible-tmp-1666319190.087322-2908-219927881113707/ /root/.ansible/tmp/ansible-tmp-1666319190.087322-2908-219927881113707/AnsiballZ_stat.py && sleep 0'
+<localhost> EXEC /bin/sh -c '/usr/bin/python3 /root/.ansible/tmp/ansible-tmp-1666319190.087322-2908-219927881113707/AnsiballZ_stat.py && sleep 0'
+<localhost> EXEC /bin/sh -c 'rm -f -r /root/.ansible/tmp/ansible-tmp-1666319190.087322-2908-219927881113707/ > /dev/null 2>&1 && sleep 0'
+ok: [localhost] => {
+    "changed": false,
+    "invocation": {
+        "module_args": {
+            "checksum_algorithm": "sha1",
+            "follow": false,
+            "get_attributes": true,
+            "get_checksum": true,
+            "get_md5": false,
+            "get_mime": true,
+            "path": "/home/bevel/platforms/r3-corda/configuration/../../../platforms/r3-corda/releases/dev/manufacturer-ns/reviewer_rbac.yaml"
+        }
+    },
+    "stat": {
+        "exists": false
+    }
+}
+
+TASK [Ensures /home/bevel/platforms/r3-corda/configuration/../../../platforms/r3-corda/releases/dev/manufacturer-ns dir exists] ***
+task path: /home/bevel/platforms/r3-corda/configuration/roles/create/k8_component/tasks/main.yaml:22
+
+TASK [/home/bevel/platforms/r3-corda/configuration/../../shared/configuration/roles/check/setup : check if dir exists or not] ***
+task path: /home/bevel/platforms/shared/configuration/roles/check/setup/tasks/main.yaml:9
+<localhost> ESTABLISH LOCAL CONNECTION FOR USER: root
+<localhost> EXEC /bin/sh -c 'echo ~root && sleep 0'
+<localhost> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /root/.ansible/tmp `"&& mkdir "` echo /root/.ansible/tmp/ansible-tmp-1666319190.4343286-2936-109461847537439 `" && echo ansible-tmp-1666319190.4343286-2936-109461847537439="` echo /root/.ansible/tmp/ansible-tmp-1666319190.4343286-2936-109461847537439 `" ) && sleep 0'
+Using module file /usr/local/lib/python3.8/dist-packages/ansible/modules/stat.py
+<localhost> PUT /root/.ansible/tmp/ansible-local-4hfwxj272/tmpz4h4ghg8 TO /root/.ansible/tmp/ansible-tmp-1666319190.4343286-2936-109461847537439/AnsiballZ_stat.py
+<localhost> EXEC /bin/sh -c 'chmod u+x /root/.ansible/tmp/ansible-tmp-1666319190.4343286-2936-109461847537439/ /root/.ansible/tmp/ansible-tmp-1666319190.4343286-2936-109461847537439/AnsiballZ_stat.py && sleep 0'
+<localhost> EXEC /bin/sh -c '/usr/bin/python3 /root/.ansible/tmp/ansible-tmp-1666319190.4343286-2936-109461847537439/AnsiballZ_stat.py && sleep 0'
+<localhost> EXEC /bin/sh -c 'rm -f -r /root/.ansible/tmp/ansible-tmp-1666319190.4343286-2936-109461847537439/ > /dev/null 2>&1 && sleep 0'
+ok: [localhost] => {
+    "changed": false,
+    "invocation": {
+        "module_args": {
+            "checksum_algorithm": "sha1",
+            "follow": false,
+            "get_attributes": true,
+            "get_checksum": true,
+            "get_md5": false,
+            "get_mime": true,
+            "path": "/home/bevel/platforms/r3-corda/configuration/../../../platforms/r3-corda/releases/dev/manufacturer-ns"
+        }
+    },
+    "stat": {
+        "atime": 1666319188.0370977,
+        "attr_flags": "",
+        "attributes": [],
+        "block_size": 4096,
+        "blocks": 0,
+        "charset": "unknown",
+        "ctime": 1666319189.8821006,
+        "dev": 41,
+        "device_type": 0,
+        "executable": true,
+        "exists": true,
+        "gid": 0,
+        "gr_name": "root",
+        "inode": 11310665,
+        "isblk": false,
+        "ischr": false,
+        "isdir": true,
+        "isfifo": false,
+        "isgid": false,
+        "islnk": false,
+        "isreg": false,
+        "issock": false,
+        "isuid": false,
+        "mimetype": "unknown",
+        "mode": "0755",
+        "mtime": 1666319189.8821006,
+        "nlink": 1,
+        "path": "/home/bevel/platforms/r3-corda/configuration/../../../platforms/r3-corda/releases/dev/manufacturer-ns",
+        "pw_name": "root",
+        "readable": true,
+        "rgrp": true,
+        "roth": true,
+        "rusr": true,
+        "size": 66,
+        "uid": 0,
+        "version": "59642",
+        "wgrp": false,
+        "woth": false,
+        "writeable": true,
+        "wusr": true,
+        "xgrp": true,
+        "xoth": true,
+        "xusr": true
+    }
+}
+
+TASK [/home/bevel/platforms/r3-corda/configuration/../../shared/configuration/roles/check/setup : Ensures dir exists] ***
+task path: /home/bevel/platforms/shared/configuration/roles/check/setup/tasks/main.yaml:17
+skipping: [localhost] => {
+    "changed": false,
+    "skip_reason": "Conditional result was False"
+}
+
+TASK [/home/bevel/platforms/r3-corda/configuration/../../shared/configuration/roles/check/setup : Check if Kubernetes-auth already created for Organization] ***
+task path: /home/bevel/platforms/shared/configuration/roles/check/setup/tasks/main.yaml:26
+skipping: [localhost] => {
+    "changed": false,
+    "skip_reason": "Conditional result was False"
+}
+
+TASK [/home/bevel/platforms/r3-corda/configuration/../../shared/configuration/roles/check/setup : Check if policy exists] ***
+task path: /home/bevel/platforms/shared/configuration/roles/check/setup/tasks/main.yaml:36
+skipping: [localhost] => {
+    "changed": false,
+    "skip_reason": "Conditional result was False"
+}
+
+TASK [/home/bevel/platforms/r3-corda/configuration/../../shared/configuration/roles/check/setup : Check docker cred exists] ***
+task path: /home/bevel/platforms/shared/configuration/roles/check/setup/tasks/main.yaml:47
+skipping: [localhost] => {
+    "changed": false,
+    "skip_reason": "Conditional result was False"
+}
+
+TASK [/home/bevel/platforms/r3-corda/configuration/../../shared/configuration/roles/check/setup : Check git https cred exists] ***
+task path: /home/bevel/platforms/shared/configuration/roles/check/setup/tasks/main.yaml:58
+skipping: [localhost] => {
+    "changed": false,
+    "skip_reason": "Conditional result was False"
+}
+
+TASK [/home/bevel/platforms/r3-corda/configuration/../../shared/configuration/roles/check/setup : check if certs exists in vault.] ***
+task path: /home/bevel/platforms/shared/configuration/roles/check/setup/tasks/main.yaml:69
+skipping: [localhost] => {
+    "changed": false,
+    "skip_reason": "Conditional result was False"
+}
+META: role_complete for localhost
+
+TASK [create/k8_component : create reviewer_rbac file for manufacturer-ns] *****
+task path: /home/bevel/platforms/r3-corda/configuration/roles/create/k8_component/tasks/main.yaml:32
+<localhost> ESTABLISH LOCAL CONNECTION FOR USER: root
+<localhost> EXEC /bin/sh -c 'echo ~root && sleep 0'
+<localhost> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /root/.ansible/tmp `"&& mkdir "` echo /root/.ansible/tmp/ansible-tmp-1666319190.938337-2975-162322324033987 `" && echo ansible-tmp-1666319190.938337-2975-162322324033987="` echo /root/.ansible/tmp/ansible-tmp-1666319190.938337-2975-162322324033987 `" ) && sleep 0'
+Using module file /usr/local/lib/python3.8/dist-packages/ansible/modules/stat.py
+<localhost> PUT /root/.ansible/tmp/ansible-local-4hfwxj272/tmpd_x5sv19 TO /root/.ansible/tmp/ansible-tmp-1666319190.938337-2975-162322324033987/AnsiballZ_stat.py
+<localhost> EXEC /bin/sh -c 'chmod u+x /root/.ansible/tmp/ansible-tmp-1666319190.938337-2975-162322324033987/ /root/.ansible/tmp/ansible-tmp-1666319190.938337-2975-162322324033987/AnsiballZ_stat.py && sleep 0'
+<localhost> EXEC /bin/sh -c '/usr/bin/python3 /root/.ansible/tmp/ansible-tmp-1666319190.938337-2975-162322324033987/AnsiballZ_stat.py && sleep 0'
+<localhost> PUT /root/.ansible/tmp/ansible-local-4hfwxj272/tmpswmjng33/reviewer_rbac.tpl TO /root/.ansible/tmp/ansible-tmp-1666319190.938337-2975-162322324033987/source
+<localhost> EXEC /bin/sh -c 'chmod u+x /root/.ansible/tmp/ansible-tmp-1666319190.938337-2975-162322324033987/ /root/.ansible/tmp/ansible-tmp-1666319190.938337-2975-162322324033987/source && sleep 0'
+Using module file /usr/local/lib/python3.8/dist-packages/ansible/modules/copy.py
+<localhost> PUT /root/.ansible/tmp/ansible-local-4hfwxj272/tmp5522rcee TO /root/.ansible/tmp/ansible-tmp-1666319190.938337-2975-162322324033987/AnsiballZ_copy.py
+<localhost> EXEC /bin/sh -c 'chmod u+x /root/.ansible/tmp/ansible-tmp-1666319190.938337-2975-162322324033987/ /root/.ansible/tmp/ansible-tmp-1666319190.938337-2975-162322324033987/AnsiballZ_copy.py && sleep 0'
+<localhost> EXEC /bin/sh -c '/usr/bin/python3 /root/.ansible/tmp/ansible-tmp-1666319190.938337-2975-162322324033987/AnsiballZ_copy.py && sleep 0'
+<localhost> EXEC /bin/sh -c 'rm -f -r /root/.ansible/tmp/ansible-tmp-1666319190.938337-2975-162322324033987/ > /dev/null 2>&1 && sleep 0'
+changed: [localhost] => {
+    "changed": true,
+    "checksum": "eeca2ede544d1da7a975465d61e7d97d3bcfb43b",
+    "dest": "/home/bevel/platforms/r3-corda/configuration/../../../platforms/r3-corda/releases/dev/manufacturer-ns/reviewer_rbac.yaml",
+    "diff": [],
+    "gid": 0,
+    "group": "root",
+    "invocation": {
+        "module_args": {
+            "_original_basename": "reviewer_rbac.tpl",
+            "attributes": null,
+            "backup": false,
+            "checksum": "eeca2ede544d1da7a975465d61e7d97d3bcfb43b",
+            "content": null,
+            "dest": "/home/bevel/platforms/r3-corda/configuration/../../../platforms/r3-corda/releases/dev/manufacturer-ns/reviewer_rbac.yaml",
+            "directory_mode": null,
+            "follow": false,
+            "force": true,
+            "group": null,
+            "local_follow": null,
+            "mode": null,
+            "owner": null,
+            "remote_src": null,
+            "selevel": null,
+            "serole": null,
+            "setype": null,
+            "seuser": null,
+            "src": "/root/.ansible/tmp/ansible-tmp-1666319190.938337-2975-162322324033987/source",
+            "unsafe_writes": false,
+            "validate": null
+        }
+    },
+    "md5sum": "93808f80d1da2380f0abef366d2063d6",
+    "mode": "0644",
+    "owner": "root",
+    "size": 327,
+    "src": "/root/.ansible/tmp/ansible-tmp-1666319190.938337-2975-162322324033987/source",
+    "state": "file",
+    "uid": 0
+}
+
+TASK [Helm lint] ***************************************************************
+task path: /home/bevel/platforms/r3-corda/configuration/roles/create/k8_component/tasks/main.yaml:44
+skipping: [localhost] => {
+    "changed": false,
+    "skip_reason": "Conditional result was False"
+}
+META: role_complete for localhost
+
+TASK [Push the created deployment files to repository] *************************
+task path: /home/bevel/platforms/r3-corda/configuration/roles/create/namespace_serviceaccount/tasks/main.yaml:63
+
+TASK [/home/bevel/platforms/r3-corda/configuration/../../shared/configuration/roles/git_push : Check if directory: /home/bevel/platforms/r3-corda/configuration/../../../ exists] ***
+task path: /home/bevel/platforms/shared/configuration/roles/git_push/tasks/main.yaml:9
+<localhost> ESTABLISH LOCAL CONNECTION FOR USER: root
+<localhost> EXEC /bin/sh -c 'echo ~root && sleep 0'
+<localhost> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /root/.ansible/tmp `"&& mkdir "` echo /root/.ansible/tmp/ansible-tmp-1666319191.4612582-3018-152013884798466 `" && echo ansible-tmp-1666319191.4612582-3018-152013884798466="` echo /root/.ansible/tmp/ansible-tmp-1666319191.4612582-3018-152013884798466 `" ) && sleep 0'
+Using module file /usr/local/lib/python3.8/dist-packages/ansible/modules/file.py
+<localhost> PUT /root/.ansible/tmp/ansible-local-4hfwxj272/tmpf83h_g56 TO /root/.ansible/tmp/ansible-tmp-1666319191.4612582-3018-152013884798466/AnsiballZ_file.py
+<localhost> EXEC /bin/sh -c 'chmod u+x /root/.ansible/tmp/ansible-tmp-1666319191.4612582-3018-152013884798466/ /root/.ansible/tmp/ansible-tmp-1666319191.4612582-3018-152013884798466/AnsiballZ_file.py && sleep 0'
+<localhost> EXEC /bin/sh -c '/usr/bin/python3 /root/.ansible/tmp/ansible-tmp-1666319191.4612582-3018-152013884798466/AnsiballZ_file.py && sleep 0'
+<localhost> EXEC /bin/sh -c 'rm -f -r /root/.ansible/tmp/ansible-tmp-1666319191.4612582-3018-152013884798466/ > /dev/null 2>&1 && sleep 0'
+ok: [localhost] => {
+    "changed": false,
+    "diff": {
+        "after": {
+            "path": "/home/bevel/platforms/r3-corda/configuration/../../../"
+        },
+        "before": {
+            "path": "/home/bevel/platforms/r3-corda/configuration/../../../"
+        }
+    },
+    "gid": 0,
+    "group": "root",
+    "invocation": {
+        "module_args": {
+            "_diff_peek": null,
+            "_original_basename": null,
+            "access_time": null,
+            "access_time_format": "%Y%m%d%H%M.%S",
+            "attributes": null,
+            "follow": true,
+            "force": false,
+            "group": null,
+            "mode": null,
+            "modification_time": null,
+            "modification_time_format": "%Y%m%d%H%M.%S",
+            "owner": null,
+            "path": "/home/bevel/platforms/r3-corda/configuration/../../../",
+            "recurse": false,
+            "selevel": null,
+            "serole": null,
+            "setype": null,
+            "seuser": null,
+            "src": null,
+            "state": "directory",
+            "unsafe_writes": false
+        }
+    },
+    "mode": "0755",
+    "owner": "root",
+    "path": "/home/bevel/platforms/r3-corda/configuration/../../../",
+    "size": 504,
+    "state": "directory",
+    "uid": 0
+}
+
+TASK [/home/bevel/platforms/r3-corda/configuration/../../shared/configuration/roles/git_push : Execute git push for ssh] ***
+task path: /home/bevel/platforms/shared/configuration/roles/git_push/tasks/main.yaml:15
+<localhost> ESTABLISH LOCAL CONNECTION FOR USER: root
+<localhost> EXEC /bin/sh -c 'echo ~root && sleep 0'
+<localhost> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /root/.ansible/tmp `"&& mkdir "` echo /root/.ansible/tmp/ansible-tmp-1666319191.68769-3044-254805421431794 `" && echo ansible-tmp-1666319191.68769-3044-254805421431794="` echo /root/.ansible/tmp/ansible-tmp-1666319191.68769-3044-254805421431794 `" ) && sleep 0'
+Using module file /usr/local/lib/python3.8/dist-packages/ansible/modules/command.py
+<localhost> PUT /root/.ansible/tmp/ansible-local-4hfwxj272/tmph1wsyjff TO /root/.ansible/tmp/ansible-tmp-1666319191.68769-3044-254805421431794/AnsiballZ_command.py
+<localhost> EXEC /bin/sh -c 'chmod u+x /root/.ansible/tmp/ansible-tmp-1666319191.68769-3044-254805421431794/ /root/.ansible/tmp/ansible-tmp-1666319191.68769-3044-254805421431794/AnsiballZ_command.py && sleep 0'
+<localhost> EXEC /bin/sh -c '/usr/bin/python3 /root/.ansible/tmp/ansible-tmp-1666319191.68769-3044-254805421431794/AnsiballZ_command.py && sleep 0'
